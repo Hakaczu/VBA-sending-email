@@ -3,7 +3,7 @@ This VBA code are simple example for email sending macro.
 
 ## Function for send email
 `
-Public Function Send(body As String, adress As String, mailTitle As String)
+ Public Function Send(body As String, adress As String, mailTitle As String)
 
     Dim outlookApp As Outlook.Application
     Dim myMail As Outlook.MailItem
@@ -17,7 +17,7 @@ Public Function Send(body As String, adress As String, mailTitle As String)
     myMail.HTMLBody = "<html> <head> <style> table, th, td {border: 1px solid black;  border-collapse: collapse; padding: 3px; text-align: center;} table {width: 100%;}, important {background-color: yellow;}</style> </head> <body>" + body + "</body> </html>"
     myMail.Send 'Sending Email
 
-End Function
+End Function 
 `
 
 Works on Excel 2016
