@@ -70,8 +70,8 @@ Public Function Send(body As String, adress As String, mailTitle As String) 'Fun
     Dim outlookApp As Outlook.Application
     Dim myMail As Outlook.MailItem
     
-    Set outlookApp = New Outlook.Application 'Tworzenie instancji obiektu Outlook.Application
-    Set myMail = outlookApp.CreateItem(olMailItem) 'Tworzenie instancji miala
+    Set outlookApp = New Outlook.Application
+    Set myMail = outlookApp.CreateItem(olMailItem)
     
     myMail.To = adress
     myMail.Subject = mailTitle
@@ -94,7 +94,7 @@ Public Function BlockBody(row As Integer, range As Integer) As String 'Mail body
     BlockBody = BlockBody + "Regards Quality Control"
 
 End Function
-Public Function UnlockBody(row As Integer, range As Integer) As String 'tresc maila
+Public Function UnlockBody(row As Integer, range As Integer) As String 'Mail body
 
     Dim i As Integer
     Dim endRange As Integer
@@ -108,7 +108,7 @@ Public Function UnlockBody(row As Integer, range As Integer) As String 'tresc ma
     UnlockBody = UnlockBody + "Regards Quality Control"
 
 End Function
-Public Function CanSend(row As Integer, range As Integer, mailType As String) As Boolean 'sprawdza czy mozna wyslac maila
+Public Function CanSend(row As Integer, range As Integer, mailType As String) As Boolean 'check that can send email
     Dim endRange As Integer
     endRange = row + range - 1
     CanSend = True
@@ -127,7 +127,7 @@ Public Function CanSend(row As Integer, range As Integer, mailType As String) As
         Next i
     End If
 End Function
-Public Function WriteInfo(row As Integer, range As Integer, infoType As String) 'wypisuje info o statusach maila
+Public Function WriteInfo(row As Integer, range As Integer, infoType As String) 'write info about email status
     Dim endRange As Integer
     endRange = row + range - 1
     
@@ -144,7 +144,7 @@ Public Function WriteInfo(row As Integer, range As Integer, infoType As String) 
     
 End Function
 Sub BlockMail()
-    If ActiveWorkbook.ReadOnly Then 'zabezpieczenie przed nieproszonym uzyciem
+    If ActiveWorkbook.ReadOnly Then 'protection against unwanted use
         Exit Sub
     End If
     Dim body As String
@@ -172,7 +172,7 @@ Sub BlockMail()
     End If
 End Sub
 Sub UnlockMail()
-    If ActiveWorkbook.ReadOnly Then 'zabezpieczenie przed nieproszonym uzyciem
+If ActiveWorkbook.ReadOnly Then 'protection against unwanted use
         Exit Sub
     End If
     Dim body As String
