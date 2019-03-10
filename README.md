@@ -2,7 +2,7 @@
 This VBA code are simple example for email sending macro.
 
 ## Function for send email
-`Public Function Send(body As String, adress As String, mailTitle As String) 'Function send email
+`Public Function Send(body As String, adress As String, mailTitle As String)
 
     Dim outlookApp As Outlook.Application
     Dim myMail As Outlook.MailItem
