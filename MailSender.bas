@@ -1,4 +1,4 @@
-'Copyright Sebastian Szypulski vel Sisa
+'Author Sebastian Szypulski vel Sisa
 
 Public Function Headers() As String 'Function return headers for table in email. 
 
